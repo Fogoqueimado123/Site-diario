@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #fdf6e3;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #c19a6b;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+.navbar > .logo img {
+  height: 180px;
+  width: 180px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background: #c19a6b;
+    width: 180px;
+    display: none;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    z-index: 100;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* CONTAINER */
+.container {
+  max-width: 95%;
+  margin: 20px auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+/* PAINEL DIÁRIO */
+.painel-diario {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background: #fff8dc;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* CONTROLE */
+.controle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.controle textarea {
+  flex: 1 1 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  font-size: 1rem;
+  background: #fffaf0;
+}
+
+.controle button,
+.controle input[type="file"],
+.controle select {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #c19a6b;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.controle button:hover,
+.controle input[type="file"]:hover,
+.controle select:hover {
+  background-color: #a87c5a;
+}
+
+/* CARDS ESTILO DIÁRIO */
+.card {
+  position: absolute;
+  background: #fffacd;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.25);
+  padding: 12px;
+  min-width: 120px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+}
+
+.card textarea {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 6px;
+  font-size: 0.9rem;
+  background: #fffacd;
+}
+
+.card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.card audio {
+  display: block;
+  width: 100%;
+}
+
+.card button {
+  padding: 5px 6px;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  background: #c19a6b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background: #a87c5a;
+}
+
+.card input[type="range"] {
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* TAMANHOS DIÁRIO RESPONSIVOS */
+.painel-diario.pequeno { width: 100%; min-height: 300px; }
+.painel-diario.medio { width: 100%; min-height: 400px; }
+.painel-diario.grande { width: 100%; min-height: 500px; }
+.painel-diario.extra-grande { width: 100%; min-height: 600px; }
+
+/* Ajustes mobile */
+@media (max-width: 768px) {
+  .card { min-width: 100px; max-width: 180px; }
+  .controle textarea { min-height: 60px; font-size: 0.9rem; }
+  h1 { font-size: 1.5rem; }
+  .controle button, .controle input[type="file"], .controle select { font-size: 0.9rem; padding: 8px; }
+}

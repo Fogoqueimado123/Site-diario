@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Diário Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="#"><img src="logo.png" alt="Meu Diário Digital Logo"></a>
+  </div>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#">Início</a>
+    <a href="https://www.instagram.com/matheus__40028922">Sobre</a>
+    <a href="https://www.contate.me/5519981010592122">Contato</a>
+  </nav>
+
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Meu Diário Digital ✨</h1>
+
+  <div class="painel-diario" id="painelDiario"></div>
+
+  <div class="controle">
+    <textarea id="diario" placeholder="Escreva algo..."></textarea>
+    <button id="adicionarTexto">➕ Adicionar Texto</button>
+    <input type="file" id="imagemUpload" accept="image/*">
+    <input type="file" id="audioUpload" accept="audio/*">
+    <select id="tamanhoDiario">
+      <option value="pequeno">Pequeno</option>
+      <option value="medio" selected>Médio</option>
+      <option value="grande">Grande</option>
+      <option value="extra-grande">Extra Grande</option>
+    </select>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
